@@ -1,0 +1,59 @@
+﻿<Controls:MetroWindow x:Class="InterfazMetro.ListaContrato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfazMetro"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Lista Contrato" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="#00AAE4">
+    <Grid Margin="0,0,2,0">
+        <TextBox x:Name="txtnumero" HorizontalAlignment="Left" Height="20" Margin="164,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164"  Controls:TextBoxHelper.Watermark="12345678-9" RenderTransformOrigin="0.291,-0.885"/>
+        <ComboBox x:Name="cbox_tipoevento" HorizontalAlignment="Left" Height="25" Margin="164,100,0,0" VerticalAlignment="Top" Width="164" >
+        </ComboBox>
+        <Label HorizontalAlignment="Left" Height="25" Margin="10,65,0,0" Content="Numero Contrato" VerticalAlignment="Top" Width="149" Background="Transparent" BorderThickness="0" Foreground="White" FontFamily="Arial Black"/>
+        <Label HorizontalAlignment="Left" Height="25" Margin="10,95,0,0" Content="Tipo Evento:" VerticalAlignment="Top" Width="149" Background="Transparent" BorderThickness="0" Foreground="White" FontFamily="Arial Black"/>
+        <DataGrid x:Name="dgContrato"  HorizontalAlignment="Left" Height="283" VerticalAlignment="Top" Width="790" Margin="0,131,0,0" SelectionChanged="dgPersonas_SelectionChanged_1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Numero" Binding="{Binding Numero}"/>
+                <DataGridTextColumn Header="Rut" Binding="{Binding RutCliente}" Width="100"/>
+                <DataGridTextColumn Header="Creacion" Binding="{Binding Creacion}" Width="100"/>
+                <DataGridTextColumn Header="Termino" Binding="{Binding Termino}" Width="100"/>
+                <DataGridTextColumn Header="Modalidad" Binding="{Binding DescripcionModalidad}"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding DescripcionEvento}"/>
+                <DataGridTextColumn Header="Fecha Inicio" Binding="{Binding FechaHoraInicio}"/>
+                <DataGridTextColumn Header="Fecha Termino" Binding="{Binding FechaHoraTermino}" Width="100"/>
+                <DataGridTextColumn Header="Asistentes" Binding="{Binding Asistentes}"/>
+                <DataGridTextColumn Header="Personal Add." Binding="{Binding PersonalAdicional}"/>
+                <DataGridTextColumn Header="Realizado" Binding="{Binding Realizado}"/>
+                <DataGridTextColumn Header="Valor Contrato" Binding="{Binding ValorTotalContrato}"/>
+                <DataGridTextColumn Header="Observaciones" Binding="{Binding Observaciones}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Limpiar campos" HorizontalAlignment="Left" Height="34" Margin="333,89,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click_1" Background="#FF0F1D4D">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="Filtro" Margin="485,77,206,309" Content="Friltrar" FontSize="20" Click="Button_Click" RenderTransformOrigin="0.158,0.553"/>
+        <TextBox x:Name="txtrut" HorizontalAlignment="Left" Height="20" Margin="164,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164"  Controls:TextBoxHelper.Watermark="4324" RenderTransformOrigin="0.291,-0.885"/>
+        <Label HorizontalAlignment="Left" Height="25" Margin="10,35,0,0" Content="Rut:" VerticalAlignment="Top" Width="98" Background="Transparent" BorderThickness="0" Foreground="White" FontFamily="Arial Black"/>
+        <Controls:Tile Margin="724,82,10,288" Height="Auto" Width="Auto" Click="Tile_Click">
+            <Image Source="Icon/Back.png" Height="40" Width="70" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.905"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="1.484"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+
+            </Image>
+        </Controls:Tile>
+        <Image Source="Image/OneBreaKK.png" Margin="454,0,10,342"/>
+    </Grid>
+</Controls:MetroWindow>
+
